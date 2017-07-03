@@ -1,0 +1,87 @@
+$(document).ready(function(){
+
+  //active href///
+  var touch = false;
+  $("[href]").each(function() {
+    if (this.href == window.location.href) {
+        $(this).addClass("active");
+        $(this).closest('li').addClass('active');
+        }
+    });
+//end active href///
+///list product --  grip prduct  -- product slide //
+    $('.slide_product .product-layout-custom').owlCarousel({
+      navigation : true, 
+      pagination : false,
+      items : 1,
+      itemsDesktop : [1199,1],
+      itemsDesktopSmall : [979,1], 
+      itemsTablet: [767,2], 
+      itemsMobile : [480,1],
+      navigationText : ['<i class="icon-left-open"><i class="fa fa-angle-left"></i></i>','<i class="icon-right-open"><i class="fa fa-angle-right"></i></i>'],
+       afterAction: function(el){
+        $('.slide_product .medium').removeClass('col-lg-3 col-md-3 col-sm-6 col-xs-12');
+       }
+  });
+  $('.list_product .medium').removeClass('col-lg-3 col-md-3 col-sm-6 col-xs-12');
+///end list product - grip prduct //
+
+//active display category//
+
+ if (localStorage.getItem('display') == 'list') {
+    $('#list-view').trigger('click');
+    $('.entry .list').addClass('active');
+  } else {
+    $('#grid-view').trigger('click');
+    $('.entry .grid').addClass('active');
+  }
+
+   $('.entry .grid').click(function(){
+      $('.entry .list').removeClass('active');
+      $(this).addClass('active');
+   })
+
+   $('.entry .list').click(function(){
+      $('.entry .grid').removeClass('active');
+      $(this).addClass('active');
+   })
+//end active display category//
+
+//scrolltop//
+ $.scrollUp({
+      scrollText: '<i class="fa fa-angle-up"></i>',
+      easingType: 'linear',
+      scrollSpeed: 900,
+      animation: 'fade'
+  });
+
+////category
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//end scrolltop//
+});(jQuery);
+
+
+
+
+
+(window.jQuery);
